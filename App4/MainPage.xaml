@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.MainPage"
+              xmlns:app="clr-namespace:App4"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"            
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+              mc:Ignorable="d"
+             >
+
+    <StackLayout>
+        <app:MonthYearPickerView
+            BackgroundColor="Black"
+            Date="{Binding Date}"
+            MinDate="06.01.2019"
+            MaxDate="06.01.2022"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center" />
+
+    </StackLayout>
+
+</ContentPage>
