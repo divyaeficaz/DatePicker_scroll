@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yondr_Finance.Views.DetailPopup"
+             xmlns:views="clr-namespace:Yondr_Finance.Controls"
+             xmlns:controls="clr-namespace:Yondr_Finance.Controls;assembly=Yondr_Finance"
+             xmlns:renderers="clr-namespace:Yondr_Finance.Renderers"  NavigationPage.HasNavigationBar="False"
+             xmlns:local="clr-namespace:Yondr_Finance.CustomRenderer"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup;assembly=Rg.Plugins.Popup "
+             CloseWhenBackgroundIsClicked="True"
+                  >
+
+    <ContentPage.Resources>
+        <StyleSheet Source="../Resources/Styles/yondrStyle.css" />
+
+    </ContentPage.Resources>
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="400"
+                                   DurationOut="300"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
+    <ScrollView>
+        <StackLayout Margin="12"
+                 Padding="24"
+                 BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+            <FlexLayout Direction="Column" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="5" Margin="0">
+
+                <!-- Header -->
+                <!--Name-->
+
+                <StackLayout x:Name="stk_name" IsVisible="false" >
+
+
+                    <StackLayout  Margin="0,0,0,5">
+                        <StackLayout>
+                            <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="First Name" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                        </StackLayout>
+                        <Frame x:Name="first_name" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+
+                                <local:CustomEntry TabIndex="0"  MaxLength="20" Text=""  ReturnType="Next" TextChanged="check_valid" Unfocused="firstname_focuschange"
+                                                HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Placeholder="First Name" FontSize="14" x:Name="txt_firstname">
+
+                                </local:CustomEntry>
+
+                            </StackLayout>
+
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,0,0,5" x:Name="middile_name">
+                        <StackLayout Margin="0,0,0,0">
+                            <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Middile Name" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                        </StackLayout>
+                        <Frame x:Name="fr_middile_name" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+
+                                <local:CustomEntry MaxLength="20" Text="" Focused="checkmiddle_focus"  ReturnType="Next" TextChanged="check_valid" Unfocused="middle_focuschanged"
+                                                HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Middile Name" WidthRequest="350" FontSize="14" x:Name="txt_middilename">
+
+                                </local:CustomEntry>
+
+
+                            </StackLayout>
+
+                        </Frame>
+                    </StackLayout>
+                    <!--Checkbox-->
+
+                    <StackLayout Orientation="Horizontal" Padding="0,0,0,0" Margin="0,5,0,5">
+                        <CheckBox x:Name="chkmidname" IsChecked="False" Color="#000" CheckedChanged="chkmidname_changed"/>
+                        <Label Text="I don't have a middle name on my ID" FontFamily="Medium-succi" HorizontalOptions="Center" TextColor="#000" FontSize="13" VerticalOptions="CenterAndExpand" ></Label>
+                    </StackLayout>
+
+                    <!--Sur name-->
+                    <StackLayout Margin="0,0,0,5">
+                        <StackLayout>
+                            <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Surname" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                        </StackLayout>
+                        <Frame x:Name="sur_name" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+
+                                <local:CustomEntry Focused="surname_focus" Text=""  ReturnType="Next"  Keyboard="Email" TextChanged="check_valid" MaxLength="20" Unfocused="surname_focuschanged"
+                                                HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Placeholder="Surname" FontSize="14" x:Name="txt_surname">
+
+                                </local:CustomEntry>
+
+                            </StackLayout>
+
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Body -->
+
+
+                <!-- Content -->
+
+                <!--DOB-->
+
+
+                <StackLayout Margin="0,0,0,5" x:Name="stk_dob" IsVisible="false" FlexLayout.Grow="1">
+                    <StackLayout>
+                        <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="DOB" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                    </StackLayout>
+                    <Frame x:Name="DOB" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Frame BackgroundColor="Transparent" WidthRequest="20" CornerRadius="0" Padding="10">
+                                <Image Source="calendar" WidthRequest="5" HeightRequest="5"></Image>
+                            </Frame>
+                            <views:MonthYearPickerView WidthRequest="130" VerticalOptions="Fill" class="dpalign" HorizontalOptions="StartAndExpand" TextColor="Black" BackgroundColor="Transparent" FontSize="14"   MinDate="01/01/1900" 
+                                                        x:Name="dtpDob">
+
+                            </views:MonthYearPickerView>
+
+                        </StackLayout>
+
+                    </Frame>
+                </StackLayout>
+
+
+
+
+                <!--Address-->
+                <StackLayout VerticalOptions="Start" x:Name="stk_address" IsVisible="false" FlexLayout.Grow="2">
+
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="100" />
+
+
+
+                        </Grid.RowDefinitions>
+
+                        <!--number and street-->
+                        <BoxView Grid.Row="1" />
+
+                        <StackLayout Grid.Row="1" Margin="0,0,0,5"  Padding="0,0,0,5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <StackLayout Margin="0,0,0,0">
+                                <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Number" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                            </StackLayout>
+                            <Frame x:Name="Number1" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+
+
+                                    <local:CustomEntry Text=""  ReturnType="Next"  MaxLength="10"
+                                                HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Placeholder="34A" FontSize="14" x:Name="txt_Number">
+
+                                    </local:CustomEntry>
+
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                        <BoxView Grid.Row="1" Grid.Column="1" />
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" Margin="0,0,0,5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="100">
+                            <StackLayout Margin="0,0,0,0">
+                                <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Street" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                            </StackLayout>
+                            <Frame x:Name="Street" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" WidthRequest="100" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+
+                                    <local:CustomEntry Text=""  ReturnType="Next" TextChanged="check_valid" MaxLength="30"
+                                                    HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Placeholder="Example St" FontSize="14" x:Name="txt_street">
+
+                                    </local:CustomEntry>
+
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                        <BoxView Grid.Row="2" />
+
+                        <!--Suburb-->
+                        <StackLayout Margin="0,20,0,5" Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2" >
+                            <StackLayout Margin="0,0,0,0">
+                                <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Suburb" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                            </StackLayout>
+                            <Frame x:Name="Suburb" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+
+                                    <local:CustomEntry BindingContext="txt_suburb" Text="" MaxLength="20"  ReturnType="Next" TextChanged="check_valid"
+                                                    HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Placeholder="Melbourne" FontSize="14" x:Name="txt_suburb">
+
+                                    </local:CustomEntry>
+
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                        <BoxView Grid.Row="3" />
+
+                        <!--State or Territory-->
+
+                        <StackLayout Margin="0,0,0,5" Grid.Row="3">
+                            <StackLayout Margin="0,0,0,0">
+                                <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="State or Territory" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                            </StackLayout>
+                            <Frame x:Name="Territory" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Picker x:Name="pkrState" IsVisible="false"  Title="" SelectedIndexChanged="checkvalidation" FontSize="14" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    </Picker >
+                                    <local:CustomEntry Text=""  ReturnType="Next" Focused="pkrselection"
+                                                HorizontalOptions="FillAndExpand" VerticalOptions="Center" Placeholder="Please Selcet" WidthRequest="100" FontSize="14" x:Name="txtsel" >
+
+                                    </local:CustomEntry>
+
+                                    <Frame Padding="0,0,5,0" Margin="0" BackgroundColor="Transparent" HasShadow="False">
+                                        <Image Source="picker_dwn"></Image>
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer  Tapped="pickerclick" 
+                                          CommandParameter="https://xamarin.com" />
+                                        </Span.GestureRecognizers>
+                                    </Frame>
+
+
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                        <BoxView Grid.Row="3" Grid.Column="1" />
+
+                        <!--Post code-->
+
+                        <StackLayout Margin="0,0,0,5" Grid.Row="3" Grid.Column="1" >
+                            <StackLayout Margin="0,0,0,0">
+                                <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Post Code" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                            </StackLayout>
+                            <Frame x:Name="PostCode"  BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+
+                                    <local:CustomEntry MaxLength="10" Text=""  ReturnType="Next" 
+                                                    HorizontalOptions="FillAndExpand" VerticalOptions="Fill" FontSize="14" x:Name="txt_postcode">
+
+                                    </local:CustomEntry>
+
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                    </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!--Gender-->
+                    <StackLayout IsVisible="false">
+                        <StackLayout>
+                            <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Gender" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Padding="0,0,0,0" Margin="0,5,0,5" >
+
+                            <RadioButton x:Name="rdbgender" Text="Male" CheckedChanged="rdbgenderchecked"
+                             TextColor="Black"
+                             GroupName="gender" FontSize="12" />
+                            <RadioButton x:Name="rdbgender1" Text="Female" CheckedChanged="rdbgenderchecked"
+                             TextColor="Black"
+                             GroupName="gender" FontSize="12" />
+                            <RadioButton x:Name="rdbgender2" Text="Prefer not to say" CheckedChanged="rdbgenderchecked"
+                             TextColor="Black"
+                             GroupName="gender" FontSize="12" />
+
+
+
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <!-- Footer -->
+                <!--footer -->
+
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,3,0,0">
+
+                    <Button class="btn_back" ImageSource="arrow_left" x:Name="back_layout" Text="BACK" Margin="0" HorizontalOptions="Start" VerticalOptions="Start"
+                            Clicked="btnback_clicked"/>
+
+
+                    <Button class="btn_yondr" x:Name="btnNext" Text="Next" WidthRequest="180" HeightRequest="50" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Clicked="btnNext_clicked"/>
+
+
+                </StackLayout>
+
+                <!--footer end-->
+            </FlexLayout>
+
+        </StackLayout>
+    </ScrollView>
+</pages:PopupPage>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yondr_Finance.Views.SignupDetailPage3"
+             xmlns:views="clr-namespace:Yondr_Finance.Controls"
+             xmlns:controls="clr-namespace:Yondr_Finance.Controls;assembly=Yondr_Finance"
+             xmlns:renderers="clr-namespace:Yondr_Finance.Renderers"  
+             NavigationPage.HasNavigationBar="False"
+             xmlns:local="clr-namespace:Yondr_Finance.CustomRenderer"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"             
+             >
+
+
+    <ContentPage.Resources>
+        <StyleSheet Source="../Resources/Styles/yondrStyle.css" />
+    </ContentPage.Resources>
+
+    <StackLayout  Spacing="10" BackgroundColor="White" Padding="20">
+
+
+     
+
+
+
+        <Grid VerticalOptions="FillAndExpand">
+
+
+            <StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+                    <StackLayout.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,60,0,0" />
+                            <On Platform="Android" Value="0,20,0,0" />
+                        </OnPlatform>
+                    </StackLayout.Padding>
+                    <controls:GradientProgressBar
+                    AlternativeTextColor="#F3F3F3"
+                    BarBackgroundColor="#F3F3F3"
+                    CornerRadius="8"
+                    FontSize="18"
+                    GradientEndColor="Black"
+                    GradientStartColor="Black"
+                    HeightRequest="9"
+                    Percentage="0.63"
+                    Margin="0,5,0,20"
+                    TextColor="Black" />
+                </StackLayout>
+                
+                <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Padding="0,30,0,20" >
+                    <Label FontFamily="Regular-succi" FontSize="Large" FontAttributes="None" Text="When is your birthday?" HorizontalOptions="Start" TextColor="Black" />
+                    <Label FontFamily="Regular-succi" FontSize="Small" Text="Provide your details as it appears on your ID"  VerticalTextAlignment="Start" HorizontalTextAlignment="Start" TextColor="Black" />
+
+
+                </StackLayout>
+
+                <StackLayout  Margin="0,0,0,5">
+                    <StackLayout>
+                        <Label  FontFamily="Regular-succi" FontSize="12" FontAttributes="None" Text="Select your Date" HorizontalOptions="Start" TextColor="Black" Margin="5,0,0,0" />
+                    </StackLayout>
+
+
+                    <Frame x:Name="welcomeText" BackgroundColor="#F3F3F3" BorderColor="#F3F3F3" Padding="3" HorizontalOptions="FillAndExpand" CornerRadius="8"  HasShadow="False">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            
+                            <Frame BackgroundColor="Transparent" WidthRequest="20" HeightRequest="15" CornerRadius="0" Padding="10" HasShadow="False">
+                                <Image Source="calendar" WidthRequest="10" HeightRequest="10"></Image>
+                            </Frame>
+                            <views:MonthYearPickerView BindingContextChanged="mnthchange" Placeholder="Select Date of Birth" WidthRequest="130" VerticalOptions="Fill" class="dpalign" HorizontalOptions="StartAndExpand" TextColor="Black" BackgroundColor="Transparent" FontSize="14"  Focused="dtfocus" Unfocused="date_unfocus" Date="{Binding Date}"  MinDate="01/01/1900" 
+                                                        x:Name="dtpDob">
+
+                            </views:MonthYearPickerView>
+
+                            <!--   <local:DatePickerCtrl FontSize="14" DateSelected="date_changed"  HorizontalOptions="FillAndExpand" Placeholder="Select a DOB." MinimumDate="01/01/1900"  x:Name="dtpDob">
+                                <DatePicker.Format>dd/MMM/yyyy</DatePicker.Format>
+                            </local:DatePickerCtrl>-->
+                                                      
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+       
+
+
+            </StackLayout>
+
+
+        </Grid>
+
+        <!--footer -->
+
+        <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0">
+
+            <Button class="btn_back" ImageSource="arrow_left" x:Name="back_layout" Text="BACK" Margin="0" HorizontalOptions="Start" VerticalOptions="Start"
+                            Clicked="btnback_clicked"/>
+
+
+            <Button class="btn_yondr" IsEnabled="true" x:Name="btnNext" Text="Next" WidthRequest="180" HeightRequest="50" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Clicked="btnNext_clicked"/>
+
+
+        </StackLayout>
+
+        <!--footer end-->
+
+    </StackLayout>
+
+
+
+
+
+
+</ContentPage>

@@ -1,0 +1,58 @@
+﻿
+
+^ContentPage {
+    background-color: white;
+}
+
+.background_yondr {
+    background-color: black;
+}
+
+.btnactive {
+    color: black;
+    background-color: #B382F2;
+    font-family: Medium-succi;
+    font-size: 18;
+    border-bottom-left-radius: 60;
+    width: 100;
+    height: 50;
+}
+
+.btnedit {
+    color: black;
+    background-color: #B382F2;
+    font-family: Medium-succi;
+    width: 40;
+    height: 40;
+}
+
+.btn_signup {
+    font-family: Medium-succi;
+    font-size: 18;
+    background-color: #B382F2;
+    color: black;
+    border-radius: 23;
+}
+
+.btn_back {
+    background-color: transparent;
+    font-family: Medium-succi;
+    font-size: 15;
+    color: black;
+}
+
+.btn_yondr {
+    background-color: #A0A0A0;
+    font-family: Medium-succi;
+    font-size: 18;
+    color: black;
+    border-radius: 23;
+}
+
+.dpalign {
+    text-align: left;
+}
+.border-none
+{
+    border:none;
+}

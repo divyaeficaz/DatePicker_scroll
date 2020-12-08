@@ -1,0 +1,195 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="countries.json" />
+    <None Remove="EmailTemplate.html" />
+    <None Remove="Resources\au-states.json" />
+    <None Remove="Resources\Fonts\SuisseIntl-Black.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-BlackItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-Bold.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-BoldItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-Book.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-BookItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-LightItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-Light_0.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-Medium.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-MediumItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-Regular.ttf" />
+    <None Remove="Resources\Fonts\SuisseIntl-RegularItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-SemiBold.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-SemiBoldItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-Thin.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-ThinItalic.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-Ultralight.otf" />
+    <None Remove="Resources\Fonts\SuisseIntl-UltralightItalic.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="au-states.json" />
+    <EmbeddedResource Include="countries.json" />
+    <EmbeddedResource Include="EmailTemplate.html" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Black.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-BlackItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Bold.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-BoldItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Book.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-BookItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-LightItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Light_0.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Medium.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-MediumItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-RegularItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-SemiBold.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-SemiBoldItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Thin.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-ThinItalic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-Ultralight.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SuisseIntl-UltralightItalic.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IntelliAbb.Xamarin.Controls" Version="1.0.148" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.9" />
+    <PackageReference Include="RestClient" Version="3.0.0.21" />
+    <PackageReference Include="RestRequest" Version="1.2.0" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="RestSharp.Newtonsoft.Json" Version="1.5.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.6" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.3.0.44" />
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="17.3.0.33" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.1.0.714" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\CustomGIFLoader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DetailPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmailVerifyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ImagePopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\InvitationcodePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LicencePopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MedicarePopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PassportPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SecurePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ShowPopupDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage10.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage11.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage12.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage13.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage14.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage15.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage16.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage17.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage18.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage19.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage20.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage4.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage5.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage6.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage7.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage8.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignupDetailPage9.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VerifyDevicePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VerifyInvitationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WebViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
