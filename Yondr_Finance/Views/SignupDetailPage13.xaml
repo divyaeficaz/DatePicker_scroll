@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yondr_Finance.Views.SignupDetailPage13"
+            xmlns:views="clr-namespace:Yondr_Finance.Controls"
+             xmlns:controls="clr-namespace:Yondr_Finance.Controls;assembly=Yondr_Finance"
+             xmlns:renderers="clr-namespace:Yondr_Finance.Renderers"  NavigationPage.HasNavigationBar="False"
+             xmlns:local="clr-namespace:Yondr_Finance.CustomRenderer" BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="../Resources/Styles/yondrStyle.css" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout  Spacing="10" Padding="20">
+
+
+           
+
+
+
+            <Grid VerticalOptions="FillAndExpand">
+
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+                        <StackLayout.Padding>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="0,20,0,0" />
+                                <On Platform="Android" Value="0,20,0,0" />
+                            </OnPlatform>
+                        </StackLayout.Padding>
+                        <controls:GradientProgressBar
+                    AlternativeTextColor="#F3F3F3"
+                    BarBackgroundColor="#F3F3F3"
+                    CornerRadius="8"
+                    FontSize="18"
+                    GradientEndColor="Black"
+                    GradientStartColor="Black"
+                    HeightRequest="9"
+                    Percentage="0.99"
+                    TextColor="Black" />
+                        </StackLayout>
+
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Padding="0,30,0,20" >
+                        <Label FontFamily="Regular-succi" FontSize="Large" FontAttributes="None" Text="Confirm your details" HorizontalOptions="Start" TextColor="Black" />
+                    </StackLayout>
+
+
+
+                    <!--Details-->
+
+
+                    <Frame Margin="0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="13" BackgroundColor="Transparent" BorderColor="Transparent" HasShadow="False">
+                        <Label Text="My Details" HorizontalOptions="Start" VerticalOptions="Start" TextColor="Black" FontAttributes="Bold" FontSize="17" Margin="0,20,0,0" />
+
+                    </Frame>
+
+                    <StackLayout Margin="0,0,0,0" Padding="0">
+
+                        <Grid>
+
+
+
+                            <!--Name-->
+
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="50" />
+
+
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition />
+
+                                </Grid.ColumnDefinitions>
+
+
+
+                                <BoxView Grid.Row="1" BackgroundColor="#f3f3f3"  />
+
+                                <!--Name-->
+                                <Label Grid.Row="1" Text="Name" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" TextColor="#636363" />
+
+                                <BoxView Grid.Row="1" Grid.Column="1"  BackgroundColor="#f3f3f3" />
+
+                                <Label  x:Name="lblName" Grid.Row="1" Grid.Column="1" Text="" HorizontalOptions="Start" VerticalOptions="Center"  Margin="10,0,0,0" TextColor="Black" />
+
+                                <Button WidthRequest="40" class="edit_btn" Clicked="name_edit" BackgroundColor="Transparent"  Grid.Row="1" Grid.Column="1" ImageSource="edit_button"  Text="" Margin="0" HorizontalOptions="End" VerticalOptions="End" />
+
+
+
+                                <!--DOB-->
+
+                                <BoxView Grid.Row="2" BackgroundColor="#f3f3f3"  />
+
+                                <Label WidthRequest="100"  Grid.Row="2" Text="DOB" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" TextColor="#636363" />
+
+                                <BoxView Grid.Row="2" Grid.Column="1" BackgroundColor="#f3f3f3"  />
+
+                                <Label WidthRequest="165"  x:Name="lblDOB" Grid.Row="2" Grid.Column="1" Text="29 August 2020" HorizontalOptions="Start" VerticalOptions="Center"  Margin="10,0,0,0" TextColor="Black"/>
+
+                                <Button WidthRequest="40" class="edit_btn"  BackgroundColor="Transparent"  Grid.Row="2" Grid.Column="1" ImageSource="edit_button"  Text="" Margin="0" HorizontalOptions="End" VerticalOptions="End" />
+
+                                <!--Address-->
+
+                                <BoxView Grid.Row="3" BackgroundColor="#f3f3f3" />
+
+                                <Label WidthRequest="100" Grid.Row="3" Text="Residential Address" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" TextColor="#636363" />
+
+                                <BoxView Grid.Row="3" Grid.Column="1" BackgroundColor="#f3f3f3" />
+
+                                <Label WidthRequest="165"  x:Name="lblAddress" Grid.Row="3" Grid.Column="1" Text="52 Toorak Rd Toorak VIC 3003" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" TextColor="Black" />
+
+                                <Button WidthRequest="40" class="edit_btn" Clicked="address_edit" BackgroundColor="Transparent"  Grid.Row="3" Grid.Column="1" ImageSource="edit_button"  Text="" Margin="0" HorizontalOptions="EndAndExpand" VerticalOptions="End" />
+
+                            </Grid>
+
+
+
+
+
+
+
+
+                        </Grid>
+
+
+                    </StackLayout>
+
+                  
+
+
+                </StackLayout>
+
+
+            </Grid>
+
+            <!--footer -->
+
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+
+                <Button class="btn_back" ImageSource="arrow_left" x:Name="back_layout" Text="BACK" Margin="0" HorizontalOptions="Start" VerticalOptions="Start"
+                            Clicked="btnback_clicked"/>
+
+
+                <Button class="btn_yondr" x:Name="btnNext" Text="Next"  IsVisible="false" WidthRequest="180" HeightRequest="50" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Clicked="btnNext_clicked"/>
+
+
+            </StackLayout>
+
+            <!--footer end-->
+
+        </StackLayout>
+
+
+
+
+    </ScrollView>
+
+</ContentPage>

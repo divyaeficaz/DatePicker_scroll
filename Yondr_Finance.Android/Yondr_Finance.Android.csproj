@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{462865D6-A272-4687-8408-B8D309825FFB}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Yondr_Finance.Droid</RootNamespace>
+    <AssemblyName>Yondr_Finance.Android</AssemblyName>
+    <Deterministic>True</Deterministic>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Drawing.Common">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Connectivity">
+      <Version>3.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomEntryRenderer.cs" />
+    <Compile Include="CustomWebViewRenderer.cs" />
+    <Compile Include="MYPickerDialog.cs" />
+    <Compile Include="MYPickerRenderer.cs" />
+    <Compile Include="ExtendedEntryRenderer.cs" />
+    <Compile Include="LocalFileProvider.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="MonthYearPickerDialog.cs" />
+    <Compile Include="MonthYearPickerRenderer.cs" />
+    <Compile Include="NumberPickerDialog.cs" />
+    <Compile Include="PdfWebViewRenderer.cs" />
+    <Compile Include="RadioButtonRenderer.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pdfjs\web\compressed.tracemonkey-pldi-09.pdf" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.xml" />
+    <AndroidResource Include="Resources\layout\Toolbar.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tick_gif_2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yondr_Finance\Yondr_Finance.csproj">
+      <Project>{3F08728B-842C-4DA8-AD62-C0F757A15358}</Project>
+      <Name>Yondr_Finance</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\driving_licence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_arrow_left.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_arrow_right.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\medi_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\passport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tick_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Yondr_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Yondr_logo_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\loder2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\loder3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\animation_logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\animation_logo_2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pdfjs\build\pdf.js" />
+    <AndroidAsset Include="Assets\pdfjs\build\pdf.worker.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\compatibility.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\debugger.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\l10n.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\viewer.css" />
+    <AndroidAsset Include="Assets\pdfjs\web\viewer.html" />
+    <AndroidAsset Include="Assets\pdfjs\web\viewer.js" />
+    <AndroidResource Include="Resources\drawable\loader1.gif" />
+    <AndroidResource Include="Resources\drawable\loader4.gif" />
+    <AndroidResource Include="Resources\drawable\picker_dwn.png" />
+    <AndroidResource Include="Resources\drawable\arrow_left.png" />
+    <AndroidResource Include="Resources\drawable\arrow_right.png" />
+    <AndroidResource Include="Resources\drawable\logo_black.png" />
+    <AndroidResource Include="Resources\drawable\logo_lavender.png" />
+    <AndroidResource Include="Resources\drawable\Tick_secure.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\arrow_left.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\calendar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\congrats_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\driving_licence.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\edit_button.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\error_message.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo_black.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo_lavender.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\medi_card.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\passport.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Submitting_document.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Tick_black.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Tick_secure.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\arrow_left.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\calendar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\congrats_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\driving_licence.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\edit_button.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\error_message.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo_black.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo_lavender.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\medi_card.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\passport.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Submitting_document.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Tick_black.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Tick_secure.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\arrow_left.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\calendar.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\congrats_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\driving_licence.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\edit_button.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\error_message.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo_black.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo_lavender.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\medi_card.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\passport.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Submitting_document.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Tick_black.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Tick_secure.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arrow_left.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\calendar.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\congrats_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\driving_licence.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\edit_button.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\error_message.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo_black.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo_lavender.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\medi_card.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\passport.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Submitting_document.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Tick_black.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Tick_secure.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\arrow_left.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\arrow_right.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\calendar.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\congrats_icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\driving_licence.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\edit_button.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\error_message.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo_black.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo_lavender.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\medi_card.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\passport.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Submitting_document.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Tick_black.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Tick_secure.png" />
+    <AndroidResource Include="Resources\layout\date_picker_dialog.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\number_picker_dialog.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\mismatch_icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\mismatch_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\mismatch_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\mismatch_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\mismatch_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\dropdown_arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\upload.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\upload_plus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\dropdown_arrow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\upload.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\upload_plus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\dropdown_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\upload.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\upload_plus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\dropdown_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\upload.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\upload_plus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\dropdown_arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\upload.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\upload_plus.png" />
+    <AndroidResource Include="Resources\drawable\dropdown_arrow.png" />
+    <AndroidResource Include="Resources\drawable\upload.png" />
+    <AndroidResource Include="Resources\drawable\upload_plus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\picker_dwn.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\picker_dwn.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\picker_dwn.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\picker_dwn.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\picker_dwn.png" />
+    <AndroidResource Include="Resources\drawable\image_demo.jpg" />
+    <AndroidResource Include="Resources\drawable\driving_licence.gif" />
+    <AndroidResource Include="Resources\drawable\medicare_card.gif" />
+    <AndroidResource Include="Resources\drawable\passport.gif" />
+    <AndroidResource Include="Resources\drawable\passport_g.gif" />
+    <AndroidResource Include="Resources\drawable\driving_licence_g.gif" />
+    <AndroidResource Include="Resources\drawable\medicare_card_g.gif" />
+    <AndroidResource Include="Resources\drawable\Congratulation.gif" />
+    <AndroidResource Include="Resources\drawable\Mismatch_1.gif" />
+    <AndroidResource Include="Resources\drawable\Securing_app.gif" />
+    <AndroidResource Include="Resources\drawable\Submiting_documents.gif" />
+    <AndroidResource Include="Resources\drawable\error_message.png" />
+    <AndroidResource Include="xml\file_paths.xml" />
+    <AndroidResource Include="Resources\layout\month_yearPicker.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\edit_button.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\delete_button.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\delete_button.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\delete_button.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\delete_button.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\delete_button.png" />
+    <AndroidResource Include="Resources\drawable\delete_button.png" />
+    <Content Include="xml\provider_paths.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties TriggeredFromHotReload="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
