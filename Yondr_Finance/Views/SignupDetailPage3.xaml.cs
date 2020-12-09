@@ -23,7 +23,8 @@ namespace Yondr_Finance.Views
             dtpDob.DateSelected += Date_DateSelected;
             var cntDate = DateTime.Now;
             var newDate = cntDate.AddYears(-18);
-            dtpDob.MaxDate = newDate;           
+            dtpDob.MaxDate = newDate;    
+            dtpDob.Date = newDate;
 
            // cvm.validate_buttons(false, btnNext);
             
