@@ -19,6 +19,10 @@ namespace Yondr_Finance.iOS
         protected override void OnElementChanged(ElementChangedEventArgs<MonthYearPickerView> e)
         {
             base.OnElementChanged(e);
+            if (e.NewElement == null)
+            {
+                return;
+            }
             _dateLabel = new UITextField();
 
             var dateToday = DateTime.Today;
