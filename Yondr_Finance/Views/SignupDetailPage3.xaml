@@ -65,7 +65,7 @@
                             <Frame BackgroundColor="Transparent" WidthRequest="20" HeightRequest="15" CornerRadius="0" Padding="10" HasShadow="False">
                                 <Image Source="calendar" WidthRequest="10" HeightRequest="10"></Image>
                             </Frame>
-                            <views:MonthYearPickerView BindingContextChanged="mnthchange" Placeholder="Select Date of Birth" WidthRequest="130" VerticalOptions="Fill" class="dpalign" HorizontalOptions="StartAndExpand" TextColor="Black" BackgroundColor="Transparent" FontSize="14"  Focused="dtfocus" Unfocused="date_unfocus" Date="{Binding Date}"  MinDate="01/01/1900" 
+                            <views:MonthYearPickerView BindingContextChanged="mnthchange" Placeholder="Select Date of Birth" WidthRequest="130" VerticalOptions="Fill" class="dpalign" HorizontalOptions="StartAndExpand" TextColor="Black" BackgroundColor="Transparent" FontSize="14"  Date="{Binding Date}"  MinDate="01/01/1900" 
                                                         x:Name="dtpDob">
 
                             </views:MonthYearPickerView>

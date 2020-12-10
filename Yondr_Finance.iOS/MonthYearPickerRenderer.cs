@@ -52,10 +52,15 @@ namespace Yondr_Finance.iOS
 
         private void SetupPicker(DateTime date)
         {
-            var datePicker = new UIPickerView();
-            _pickerModel = new MYPickerDateModel(datePicker, date);
-            datePicker.ShowSelectionIndicator = true;
             _selectedDate = date;
+            if (Element.MaxDate.HasValue && _selectedDate > Element.MaxDate.Value)
+            {
+                _selectedDate =  Element.MaxDate.Value;
+            }
+            
+            var datePicker = new UIPickerView();
+            _pickerModel = new MYPickerDateModel(datePicker, _selectedDate);
+            datePicker.ShowSelectionIndicator = true;
             _pickerModel.PickerChanged += (sender, e) =>
             {
                 _selectedDate = e;
