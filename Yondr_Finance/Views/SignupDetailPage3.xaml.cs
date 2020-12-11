@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,19 +19,30 @@ namespace Yondr_Finance.Views
         
         public SignupDetailPage3()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            BindingContext = cvm;
+            cvm.PropertyChanged += OnPropertyChanged;
             dtpDob.BindingContextChanged += mnthchange;
             dtpDob.DateSelected += Date_DateSelected;
             var cntDate = DateTime.Now;
             var newDate = cntDate.AddYears(-18);
             dtpDob.MaxDate = newDate;    
-            dtpDob.Date = newDate;
+            cvm.Date = newDate;
 
            // cvm.validate_buttons(false, btnNext);
             
             
         }
-        protected async override void OnAppearing()
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(cvm.Date))
+            {
+                date_unfocus();
+            }
+        }
+
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             await Task.Delay(600);
@@ -58,7 +70,7 @@ namespace Yondr_Finance.Views
         }
         private void date_changed(object sender, DateChangedEventArgs e)
         {
-           
+            //this all time will have true!!!
             if (dtpDob.ToString()!=null)
             {
                 cvm.validate_buttons(true, btnNext);
@@ -69,22 +81,11 @@ namespace Yondr_Finance.Views
             }
         }
 
-        private void date_unfocus(object sender, FocusEventArgs e)
+        private void date_unfocus()
         {
-            //var xx = dtpDob.Date;
-            if (dtpDob.ToString() != null)
-            {
-                cvm.validate_buttons(true, btnNext);
-            }
-            else
-            {
-                cvm.validate_buttons(false, btnNext);
-            }
-        }
-
-        private void dtfocus(object sender, FocusEventArgs e)
-        {
-            
+            //this all time will have true!!!
+            //cvm.validate_buttons(dtpDob.ToString() != null, btnNext);
+            cvm.validate_buttons(cvm.Date.HasValue, btnNext);
         }
 
         private void mnthchange(object sender, EventArgs e)
